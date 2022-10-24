@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { BrowserRouter, Routes, Route, Router, Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Home from "./pages/Home";
+import PerusahaanList from "./pages/PerusahaanList";
+import PerusahaanPendaftaran from "./pages/PerusahaanPendaftaran";
 
-function App() {
+export default function BasicGrid() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="posts/:id" element={<Posts />}></Route>*/}
+          <Route path="perusahaan/list" element={<PerusahaanList />} />
+          <Route
+            path="perusahaan/pendaftaran"
+            element={<PerusahaanPendaftaran />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </Box>
   );
 }
-
-export default App;
