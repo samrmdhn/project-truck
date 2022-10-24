@@ -21,27 +21,26 @@ export default function PerusahaanPendaftaran() {
         <Box p={3} width={"100%"} bgcolor={"primary.main"}>
           <Navbar name="Pendaftaran" />
         </Box>
-        <Box mt={2}>
-          <Box mt={2}>
-            <Box sx={{ width: "100%" }}>
-              <Tabs
-                value={valueTabs}
-                onChange={handleChange}
-                aria-label="secondary tabs example"
-              >
-                <Tab value="satuan" label="Satuan" />
-                <Tab value="batch" label="Batch" />
-              </Tabs>
-            </Box>
 
-            {valueTabs === "satuan" ? (
-              <>
-                <DaftarSatuan />
-              </>
-            ) : (
-              <>Batch</>
-            )}
+        <Box mt={2} p={3}>
+          <Box sx={{ width: "100%" }}>
+            <Tabs
+              value={valueTabs}
+              onChange={handleChange}
+              aria-label="secondary tabs example"
+            >
+              <Tab value="satuan" label="Satuan" />
+              <Tab value="batch" label="Batch" />
+            </Tabs>
           </Box>
+
+          {valueTabs === "satuan" ? (
+            <>
+              <DaftarSatuan />
+            </>
+          ) : (
+            <>Batch</>
+          )}
         </Box>
       </Home>
     </Box>
