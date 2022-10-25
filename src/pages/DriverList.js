@@ -1,4 +1,5 @@
-import Home from "./Home";import Navbar from "../components/Navbar";
+import Home from "./Home";
+import Navbar from "../components/Navbar";
 import { Box, Card, CardContent } from "@mui/material";
 
 export default function DriverList() {

@@ -9,6 +9,7 @@ export default function Navbar({ link, name }) {
         <Link underline="hover" color="white" href="/">
           {link}
         </Link>
+
         <Typography color="white">{name}</Typography>
       </Breadcrumbs>
     </Box>
