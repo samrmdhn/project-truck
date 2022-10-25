@@ -1,14 +1,18 @@
-import { CardContent, Typography } from "@mui/material";import Card from "@mui/material/Card";
-
+import { Button, CardContent, Typography } from "@mui/material";import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { Box } from "@mui/system";
+import { Link } from "react-router-dom";
 
-export default function CardPerusahaan({ name, contract, phone, status }) {
+export default function CardPerusahaan({ name, contract, phone, status, id }) {
   return (
     <>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
-          <Typography sx={{ fontSize: 10 }} color="text.secondary" gutterBottom>
+          <Typography
+            sx={{ fontSize: 10, fontWeight: "bolder" }}
+            color="text.secondary"
+            gutterBottom
+          >
             INFORMASI PERUSAHAAN
           </Typography>
           <Typography
@@ -32,38 +36,35 @@ export default function CardPerusahaan({ name, contract, phone, status }) {
             width={"100%"}
             padding={1}
           >
-            {status ? (
-              <>
-                <Box
-                  borderRadius={10}
-                  backgroundColor={"green"}
-                  color={"white"}
-                  fontSize={10}
-                  fontWeight={"bolder"}
-                  padding={1}
-                >
-                  Active
-                </Box>
-              </>
-            ) : (
-              <>
-                <Box
-                  borderRadius={10}
-                  backgroundColor={"red"}
-                  color={"white"}
-                  fontSize={10}
-                  fontWeight={"bolder"}
-                  padding={1}
-                >
-                  Not Active
-                </Box>
-              </>
-            )}
+            <Box
+              borderRadius={10}
+              backgroundColor={status ? "green" : "grey"}
+              color={"white"}
+              fontSize={10}
+              fontWeight={"bolder"}
+              padding={1}
+            >
+              {status ? "ACTIVE" : "NOT ACTIVE"}
+            </Box>
 
             <Box display={"flex"} justifyContent={"space-around"}>
-              <Box>Edit</Box>
-              <Box> | </Box>
-              <Box>Delete</Box>
+              <Box marginRight={1}>
+                <Link
+                  to={`/perusahaan/edit/${id}`}
+                  style={{ textDecoration: "none", fontWeight: "bolder" }}
+                >
+                  <a>Edit</a>
+                </Link>
+              </Box>
+              <Box>|</Box>
+              <Box marginLeft={1}>
+                <Link
+                  to={`/perusahaan/edit/${id}`}
+                  style={{ textDecoration: "none", fontWeight: "bolder" }}
+                >
+                  <a>Delete</a>
+                </Link>
+              </Box>
             </Box>
           </Box>
         </CardActions>

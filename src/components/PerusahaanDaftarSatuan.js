@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Box, Button, Grid, Typography } from "@mui/material";
+import React, { useState, useEffect } from "react";import { Box, Button, Grid, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-export default function DaftarSatuan() {
+export default function PerusahaanDaftarSatuan() {
   const [mor, setMor] = useState("");
   const [name, setName] = useState("");
   const [nokontrak, setNoKontrak] = useState("");
@@ -17,7 +16,7 @@ export default function DaftarSatuan() {
   return (
     <Box mt={2}>
       <form onSubmit={handleSubmit}>
-        <Grid container alignItems="center" display="flex">
+        <Grid container alignItems="center" display="flex" marginBottom={2}>
           <Grid xs="2" md="2" lg="2">
             <label for="mor">MOR</label>
           </Grid>
@@ -30,7 +29,7 @@ export default function DaftarSatuan() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" display="flex" marginTop="10px">
+        <Grid container alignItems="center" display="flex" marginBottom={2}>
           <Grid xs="2" md="2" lg="2">
             <label for="name">Nama PT</label>
           </Grid>
@@ -43,7 +42,7 @@ export default function DaftarSatuan() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" display="flex" marginTop="10px">
+        <Grid container alignItems="center" display="flex" marginBottom={2}>
           <Grid xs="2" md="2" lg="2">
             <label for="nokontrak">No Kontrak</label>
           </Grid>
@@ -56,7 +55,7 @@ export default function DaftarSatuan() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" display="flex" marginTop="10px">
+        <Grid container alignItems="center" display="flex" marginBottom={2}>
           <Grid xs="2" md="2" lg="2">
             <label for="email">Email</label>
           </Grid>
@@ -69,7 +68,7 @@ export default function DaftarSatuan() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" display="flex" marginTop="10px">
+        <Grid container alignItems="center" display="flex" marginBottom={2}>
           <Grid xs="2" md="2" lg="2">
             <label for="hp">HP</label>
           </Grid>
@@ -82,13 +81,19 @@ export default function DaftarSatuan() {
           </Grid>
         </Grid>
 
-        <Grid container alignItems="center" display="flex" marginTop="10px">
+        <Grid container alignItems="center" display="flex">
           <Grid xs="2" md="2" lg="2">
             {/* */}
           </Grid>
-          <Grid xs="10" md="10" lg="10">
+          <Grid
+            xs="10"
+            md="10"
+            lg="4"
+            display={"Flex"}
+            justifyContent={"center"}
+          >
             <Button variant="contained" type="submit">
-              Submit
+              Daftarkan
             </Button>
           </Grid>
         </Grid>

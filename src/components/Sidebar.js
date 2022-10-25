@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";import { Box, ListSubheader } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, ListSubheader } from "@mui/material";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -89,28 +90,33 @@ export default function Sidebar() {
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary="Driver" />
-            {nested1 ? <ExpandLess /> : <ExpandMore />}
+            {nested2 ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
 
           <Collapse in={nested2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <Link
-                to={`perusahaan/list`}
+                to={`/driver/list`}
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <ListItemButton sx={{ pl: 4 }}>
                   <ListItemIcon>
-                    <StarBorder />
+                    <ListIcon />
                   </ListItemIcon>
                   <ListItemText primary="List" />
                 </ListItemButton>
               </Link>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>
-                  <StarBorder />
-                </ListItemIcon>
-                <ListItemText primary="Pendaftaran" />
-              </ListItemButton>
+              <Link
+                to={`/driver/pendaftaran`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <ListItemButton sx={{ pl: 4 }}>
+                  <ListItemIcon>
+                    <NoteAddIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Pendaftaran" />
+                </ListItemButton>
+              </Link>
             </List>
           </Collapse>
         </List>
