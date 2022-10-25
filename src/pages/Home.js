@@ -9,11 +9,11 @@ export default function Home({ children }) {
   return (
     <>
       <Box>
-        <Grid container spacing={2}>
+        <Grid container p={0}>
           <Grid xs={2} md={2} lg={2}>
             <Sidebar />
           </Grid>
-          <Grid xs={10} md={10} lg={10}>
+          <Grid xs={10} md={10} lg={10} p={0}>
             {children}
           </Grid>
         </Grid>

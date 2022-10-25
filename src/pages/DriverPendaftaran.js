@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from "react";import Box from "@mui/material/Box";
+import React, { useState } from "react";
+import { Box, Card, CardContent } from "@mui/material";
+import Navbar from "../components/Navbar";
 import Home from "./Home";
-
-//TABS
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import PerusahaanDaftarSatuan from "../components/PerusahaanDaftarSatuan";
-import Navbar from "../components/Navbar";
-import { Card, CardContent } from "@mui/material";
-import DriveDaftarSatuan from "../components/DriverDaftarSatuan";
+import DriverDaftarSatuan from "../components/DriverDaftarSatuan";
 
-export default function PerusahaanPendaftaran() {
+export default function DriverPendaftaran() {
   const [valueTabs, setValueTabs] = useState("satuan");
 
   const handleChange = (event, newValue) => {
@@ -19,8 +16,8 @@ export default function PerusahaanPendaftaran() {
   return (
     <Box>
       <Home>
-        <Navbar link={`Perusahaan`} name="Pendaftaran" />
-        <Box backgroundColor={"rgb(244, 244, 244)"} minHeight={"90vh"}>
+        <Navbar link={`Driver`} name={`Pendaftaran`} />
+        <Box backgroundColor={"rgb(244, 244, 244)"} minHeight={`100vh`}>
           <Box p={3}>
             <Card>
               <CardContent>
@@ -37,7 +34,7 @@ export default function PerusahaanPendaftaran() {
 
                 {valueTabs === "satuan" ? (
                   <>
-                    <PerusahaanDaftarSatuan />
+                    <DriverDaftarSatuan />
                   </>
                 ) : (
                   <>Batch</>
