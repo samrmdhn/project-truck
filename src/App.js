@@ -6,6 +6,7 @@ import PerusahaanList from "./pages/PerusahaanList";
 import PerusahaanPendaftaran from "./pages/PerusahaanPendaftaran";
 import PerusahaanEdit from "./pages/PerusahaanEdit";
 import DriverList from "./pages/DriverList";
+import Dashboard from "./pages/Dashboard";
 import DriverPendaftaran from "./pages/DriverPendaftaran";
 
 export default function BasicGrid() {
@@ -13,7 +14,7 @@ export default function BasicGrid() {
     <Box>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Dashboard />} />
           {/* <Route path="posts/:id" element={<Posts />}></Route>*/}
           <Route path="perusahaan/list" element={<PerusahaanList />} />
           <Route

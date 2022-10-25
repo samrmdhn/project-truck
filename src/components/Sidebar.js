@@ -52,7 +52,7 @@ export default function Sidebar() {
           aria-labelledby="nested-list-subheader"
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-              Nested List Items
+              TRUCK MAINTENANCE
             </ListSubheader>
           }
         >
