@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar";import Home from "./Home";
+import Navbar from "../components/Navbar";
+import Home from "./Home";
 import Box from "@mui/material/Box";
 import { Card, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
@@ -68,7 +69,7 @@ const dataVertical = {
   datasets: [
     {
       label: "Dataset 2",
-      data: [7, 5, 3, 2],
+      data: [7, 5, 3, 2, 8],
       borderColor: "rgb(53, 162, 235)",
       backgroundColor: ["rgba(53, 162, 235, 0.5)", "rgba(53, 102, 155, 0.5)"],
     },
@@ -128,10 +129,10 @@ const options3 = {
   plugins: {
     legend: {
       position: "top",
+      display: false,
     },
     title: {
-      display: true,
-      text: "Chart.js Bar Chart",
+      display: false,
     },
   },
 };
