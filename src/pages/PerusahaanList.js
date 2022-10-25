@@ -1,15 +1,16 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Unstable_Grid2";
 import Home from "./Home";
 import Navbar from "../components/Navbar";
 import {
   Button,
+  Grid,
   Card,
   CardContent,
   TextField,
   Typography,
 } from "@mui/material";
+
 import CardPerusahaan from "../components/CardPerusahaan";
 
 const DUMMY_LIST_PERUSAHAAN = [
@@ -56,11 +57,11 @@ export default function PerusahaanList() {
                   Cari Perusahaan
                 </Typography>
                 <Grid container spacing={2} padding={0} marginTop={1} p={0}>
-                  <Grid md={4}>
+                  <Grid item md={4}>
                     <TextField size="small" fullWidth={true} />
                   </Grid>
 
-                  <Grid md={2}>
+                  <Grid item md={2}>
                     <Button variant="contained">Cari</Button>
                   </Grid>
                 </Grid>
@@ -73,7 +74,7 @@ export default function PerusahaanList() {
               {DUMMY_LIST_PERUSAHAAN.map((list, index) => {
                 return (
                   <>
-                    <Grid md={4}>
+                    <Grid item md={4}>
                       <CardPerusahaan
                         key={index}
                         id={list.id}

@@ -1,9 +1,17 @@
-import { Button, CardContent, Typography, Box } from "@mui/material";
+import { Button, CardContent, Typography, Box, Avatar } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
 
-export default function CardPerusahaan({ name, contract, phone, status, id }) {
+export default function CardDriver({
+  name,
+  phone,
+  jenisKelamin,
+  id,
+  image,
+  status,
+  email,
+}) {
   return (
     <>
       <Card sx={{ minWidth: 275 }}>
@@ -12,9 +20,13 @@ export default function CardPerusahaan({ name, contract, phone, status, id }) {
             sx={{ fontSize: 10, fontWeight: "bolder" }}
             color="text.secondary"
           >
-            INFORMASI PERUSAHAAN
+            NAMA
           </Typography>
-          <Box display={`flex`} alignItems={`center`}>
+          <Box
+            display={`flex`}
+            alignItems={`center`}
+            justifyContent={`space-between`}
+          >
             <Box>
               <Typography
                 variant="h6"
@@ -25,11 +37,15 @@ export default function CardPerusahaan({ name, contract, phone, status, id }) {
                 {name}
               </Typography>
 
-              <Typography variant="body2">{contract}</Typography>
+              <Typography variant="body2">{jenisKelamin}</Typography>
 
+              <Typography variant="body2">{email}</Typography>
               <Typography variant="body2">{phone}</Typography>
             </Box>
-            <Box>loemrekrmre9</Box>
+
+            <Box>
+              <Avatar sx={{ height: 80, width: 80 }} src={image} />
+            </Box>
           </Box>
         </CardContent>
         <CardActions>
