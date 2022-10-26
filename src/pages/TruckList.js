@@ -1,67 +1,57 @@
-import Home from "./Home";import Navbar from "../components/Navbar";
-import {
+import Box from "@mui/material/Box";import {
   Card,
   CardContent,
+  Typography,
   Grid,
   TextField,
-  Typography,
   Button,
 } from "@mui/material";
-import Box from "@mui/material/Box";
-
+import Navbar from "../components/Navbar";
+import Home from "./Home";
 import CardPerusahaan from "../components/CardPerusahaan";
-import CardDriver from "../components/CardDriver";
 
 const DUMMY_LIST_PERUSAHAAN = [
   {
     id: 1,
-    name: "Syams Syair R",
-    jenisKelamin: "Laki-laki",
-    email: "thesyams.rebel8@gmail.com",
+    name: "MITSUBISHI",
+    contract: "Contract/abcd/234cf",
     phone: "082523952352",
-    image: "https://i.pravatar.cc/150?img=57",
     status: true,
   },
   {
     id: 2,
-    name: "Reska",
-    jenisKelamin: "Laki-laki",
-    email: "screamparad0x@gmail.com",
-    phone: "082523952352",
-    image: "https://i.pravatar.cc/150?img=17",
+    name: "PT GERHANA",
+    contract: "Contract/efhwf/webweb",
+    phone: "08235235",
     status: false,
   },
   {
     id: 3,
-    name: "Navira",
-    jenisKelamin: "Perempuan",
-    email: "tzz@gmail.com",
-    phone: "0835952352",
-    image: "https://i.pravatar.cc/150?img=47",
+    name: "PT INDAH PERKASA",
+    contract: "Contract/ewkgl/2wvwe",
+    phone: "08982948294",
     status: true,
   },
   {
     id: 4,
-    name: "Faris Muhammad",
-    jenisKelamin: "Laki-laki",
-    email: "mfarissetiawan91@gmail.com",
-    phone: "082523952352",
-    image: "https://i.pravatar.cc/150?img=60",
+    name: "PT ANGIN RIBUT",
+    contract: "Contract/wefwe/239829ch",
+    phone: "087878909097",
     status: false,
   },
 ];
 
-export default function DriverList() {
+export default function TruckList() {
   return (
     <Box>
       <Home>
-        <Navbar link={`Driver`} name={`List`} />
+        <Navbar link="Truck" name="List" />
         <Box backgroundColor={"rgb(244, 244, 244)"} minHeight={"90vh"}>
           <Box p={3}>
             <Card>
               <CardContent>
                 <Typography variant="h6" fontWeight={"bolder"}>
-                  Cari Driver
+                  Cari Truck
                 </Typography>
                 <Grid container spacing={2} padding={0} marginTop={1} p={0}>
                   <Grid item md={4}>
@@ -82,14 +72,12 @@ export default function DriverList() {
                 return (
                   <>
                     <Grid item md={4}>
-                      <CardDriver
+                      <CardPerusahaan
                         key={index}
                         id={list.id}
                         name={list.name}
-                        jenisKelamin={list.jenisKelamin}
-                        email={list.email}
+                        contract={list.contract}
                         phone={list.phone}
-                        image={list.image}
                         status={list.status}
                       />
                     </Grid>

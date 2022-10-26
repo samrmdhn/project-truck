@@ -13,6 +13,8 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import ListIcon from "@mui/icons-material/List";
 import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import { Link } from "react-router-dom";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 
 const NESTED_ITEMS_PERUSAHAAN = [
   {
@@ -27,15 +29,55 @@ const NESTED_ITEMS_PERUSAHAAN = [
   },
 ];
 
+const NESTED_DRIVERS = [
+  {
+    link: "/driver/list",
+    text: "List",
+    icon: <ListIcon />,
+  },
+  {
+    link: "/driver/pendaftaran",
+    text: "Pendaftaran",
+    icon: <NoteAddIcon />,
+  },
+];
+
+const NESTED_ITEMS_TRUCK = [
+  {
+    link: "/truck/list",
+    text: "List",
+    icon: <ListIcon />,
+  },
+  {
+    link: "/truck/pendaftaran",
+    text: "Pendaftaran",
+    icon: <NoteAddIcon />,
+  },
+];
+
+const NESTED_ITEMS_SERVICE = [
+  {
+    link: "/service/form",
+    text: "Form",
+    icon: <ListIcon />,
+  },
+];
+
 export default function Sidebar() {
   const [nested1, setNested1] = useState(true);
   const [nested2, setNested2] = useState(true);
+  const [nested3, setNested3] = useState(true);
+  const [nested4, setNested4] = useState(true);
 
   const handleClick = (index) => {
     if (index == 1) {
       setNested1(!nested1);
-    } else {
+    } else if (index == 2) {
       setNested2(!nested2);
+    } else if (index == 3) {
+      setNested3(!nested3);
+    } else {
+      setNested4(!nested4);
     }
   };
 
@@ -52,7 +94,12 @@ export default function Sidebar() {
           aria-labelledby="nested-list-subheader"
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-              TRUCK MAINTENANCE
+              <Link
+                to={`/`}
+                style={{ textDecoration: "none", fontWeight: "bolder" }}
+              >
+                <a>TRUCK MAINTENANCE</a>
+              </Link>
             </ListSubheader>
           }
         >
@@ -89,34 +136,86 @@ export default function Sidebar() {
             <ListItemIcon>
               <PersonIcon />
             </ListItemIcon>
-            <ListItemText primary="Driver" />
+            <ListItemText primary="Driver" style={{ marginLeft: -10 }} />
             {nested2 ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
 
           <Collapse in={nested2} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <Link
-                to={`/driver/list`}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <ListItemButton sx={{ pl: 4 }}>
-                  <ListItemIcon>
-                    <ListIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="List" />
-                </ListItemButton>
-              </Link>
-              <Link
-                to={`/driver/pendaftaran`}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <ListItemButton sx={{ pl: 4 }}>
-                  <ListItemIcon>
-                    <NoteAddIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Pendaftaran" />
-                </ListItemButton>
-              </Link>
+              {NESTED_DRIVERS.map((driver, index) => {
+                return (
+                  <>
+                    <Link
+                      to={driver.link}
+                      key={index}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemIcon>{driver.icon}</ListItemIcon>
+                        <ListItemText primary={driver.text} />
+                      </ListItemButton>
+                    </Link>
+                  </>
+                );
+              })}
+            </List>
+          </Collapse>
+
+          <ListItemButton onClick={() => handleClick(3)}>
+            <ListItemIcon>
+              <LocalShippingIcon />
+            </ListItemIcon>
+            <ListItemText primary="Truck" style={{ marginLeft: -10 }} />
+            {nested3 ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={nested3} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {NESTED_ITEMS_TRUCK.map((items, index) => {
+                return (
+                  <>
+                    <Link
+                      to={items.link}
+                      key={index}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemIcon>{items.icon}</ListItemIcon>
+                        <ListItemText primary={items.text} />
+                      </ListItemButton>
+                    </Link>
+                  </>
+                );
+              })}
+            </List>
+          </Collapse>
+
+          <ListItemButton onClick={() => handleClick(4)}>
+            <ListItemIcon>
+              <MiscellaneousServicesIcon />
+            </ListItemIcon>
+            <ListItemText primary="Service" style={{ marginLeft: -10 }} />
+            {nested3 ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+
+          <Collapse in={nested4} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {NESTED_ITEMS_SERVICE.map((items, index) => {
+                return (
+                  <>
+                    <Link
+                      to={items.link}
+                      key={index}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemIcon>{items.icon}</ListItemIcon>
+                        <ListItemText primary={items.text} />
+                      </ListItemButton>
+                    </Link>
+                  </>
+                );
+              })}
             </List>
           </Collapse>
         </List>

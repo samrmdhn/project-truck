@@ -1,4 +1,11 @@
-import { Button, CardContent, Typography, Box, Avatar } from "@mui/material";
+import {
+  Button,
+  CardContent,
+  Typography,
+  Box,
+  Avatar,
+  Divider,
+} from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import { Link } from "react-router-dom";
@@ -19,9 +26,12 @@ export default function CardDriver({
           <Typography
             sx={{ fontSize: 10, fontWeight: "bolder" }}
             color="text.secondary"
+            mb={1}
           >
-            NAMA
+            DRIVER {id}
           </Typography>
+          <Divider />
+          <Box mb={1} />
           <Box
             display={`flex`}
             alignItems={`center`}

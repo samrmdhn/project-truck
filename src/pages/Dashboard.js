@@ -87,32 +87,13 @@ const options = {
 };
 
 const options2 = {
+  maintainAspectRatio: true,
   indexAxis: "y",
   elements: {
     bar: {
       borderWidth: 2,
     },
   },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "right",
-      display: false,
-    },
-    title: {
-      display: true,
-    },
-  },
-};
-
-const options35 = {
-  indexAxis: "x",
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
   plugins: {
     legend: {
       position: "right",
@@ -125,7 +106,7 @@ const options35 = {
 };
 
 const options3 = {
-  responsive: true,
+  maintainAspectRatio: true,
   plugins: {
     legend: {
       position: "top",
@@ -146,7 +127,7 @@ export default function Dashboard() {
           <Box p={3}>
             <Grid container padding={0} spacing={3} mb={3}>
               <Grid item md={2}>
-                <Card>
+                <Card style={{ height: "100%" }}>
                   <CardContent>
                     <Typography style={{ fontWeight: "bolder" }} mb={2}>
                       MAINTENANCE ORDERS
@@ -168,12 +149,7 @@ export default function Dashboard() {
                       This Week
                     </Typography>
                     <Box pr={3} pl={3}>
-                      <Doughnut
-                        data={data}
-                        width={`150px`}
-                        height={`150px`}
-                        options={options}
-                      />
+                      <Doughnut data={data} options={options} />
                     </Box>
                   </CardContent>
                 </Card>
@@ -188,13 +164,8 @@ export default function Dashboard() {
                     <Typography style={{ color: "grey" }} mb={2}>
                       This Week
                     </Typography>
-                    <Box>
-                      <Doughnut
-                        data={data}
-                        width={`150px`}
-                        height={`150px`}
-                        options={options}
-                      />
+                    <Box pr={3} pl={3}>
+                      <Doughnut data={data} options={options} />
                     </Box>
                   </CardContent>
                 </Card>
@@ -219,7 +190,9 @@ export default function Dashboard() {
                     <Typography style={{ fontWeight: "bolder" }}>
                       MAINTENANCE WORKS
                     </Typography>
-                    <Bar data={dataHorizontal} options={options2} />
+                    <Box>
+                      <Bar data={dataHorizontal} options={options2} />
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
@@ -232,13 +205,8 @@ export default function Dashboard() {
                     <Typography style={{ color: "grey" }} mb={2}>
                       This Month
                     </Typography>
-                    <Box>
-                      <Doughnut
-                        data={dataCatatan}
-                        width={`150px`}
-                        height={`150px`}
-                        options={options}
-                      />
+                    <Box pr={3} pl={3}>
+                      <Doughnut data={dataCatatan} options={options} />
                     </Box>
                   </CardContent>
                 </Card>
