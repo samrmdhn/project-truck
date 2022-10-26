@@ -23,7 +23,7 @@ const DUMMY_LIST_PERUSAHAAN = [
   },
   {
     id: 2,
-    name: "PT GERHANA BULAN",
+    name: "PT GERHANA",
     contract: "Contract/efhwf/webweb",
     phone: "08235235",
     status: false,
@@ -37,7 +37,7 @@ const DUMMY_LIST_PERUSAHAAN = [
   },
   {
     id: 4,
-    name: "PT ANGIN RIBUT",
+    name: "PT AXXC",
     contract: "Contract/wefwe/239829ch",
     phone: "087878909097",
     status: false,
