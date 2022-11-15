@@ -1,5 +1,4 @@
-import {
-  Button,
+import {  Button,
   CardContent,
   Typography,
   Box,
@@ -38,14 +37,19 @@ export default function CardDriver({
             justifyContent={`space-between`}
           >
             <Box>
-              <Typography
-                variant="h6"
-                component="div"
-                fontWeight={"bolder"}
-                marginBottom={1}
+              <Link
+                to={`/driver/profile/${id}`}
+                style={{ all: "unset", cursor: "pointer" }}
               >
-                {name}
-              </Typography>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  fontWeight={"bolder"}
+                  marginBottom={1}
+                >
+                  {name}
+                </Typography>
+              </Link>
 
               <Typography variant="body2">{jenisKelamin}</Typography>
 

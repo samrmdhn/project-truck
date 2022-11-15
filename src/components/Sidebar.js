@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Box, ListSubheader } from "@mui/material";
+import React, { useState, useEffect } from "react";import { Box, ListSubheader } from "@mui/material";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -94,130 +93,150 @@ export default function Sidebar() {
           aria-labelledby="nested-list-subheader"
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-              <Link
-                to={`/`}
-                style={{ textDecoration: "none", fontWeight: "bolder" }}
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
               >
-                <a>TRUCK MAINTENANCE</a>
-              </Link>
+                <Link
+                  to={`/`}
+                  style={{
+                    textDecoration: "none",
+                    fontWeight: "bolder",
+                  }}
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/id/thumb/c/cf/PT_Pertamina_Patra_Niaga.svg/1200px-PT_Pertamina_Patra_Niaga.svg.png"
+                    height="100"
+                    sx={{ margin: "auto" }}
+                  />
+                </Link>
+              </Box>
             </ListSubheader>
           }
         >
-          <ListItemButton onClick={() => handleClick(1)}>
-            <ListItemIcon>
-              <ApartmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Perusahaan" style={{ marginLeft: -10 }} />
-            {nested1 ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
+          <Box sx={{ padding: 1 }}>
+            <ListItemButton
+              onClick={() => handleClick(1)}
+              sx={{ backgroundColor: "white", borderRadius: 3 }}
+            >
+              <ListItemIcon>
+                <ApartmentIcon />
+              </ListItemIcon>
+              <ListItemText primary="Perusahaan" style={{ marginLeft: -10 }} />
+              {nested1 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
 
-          <Collapse in={nested1} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {NESTED_ITEMS_PERUSAHAAN.map((items, index) => {
-                return (
-                  <>
-                    <Link
-                      to={items.link}
-                      key={index}
-                      style={{ textDecoration: "none", color: "black" }}
-                    >
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{items.icon}</ListItemIcon>
-                        <ListItemText primary={items.text} />
-                      </ListItemButton>
-                    </Link>
-                  </>
-                );
-              })}
-            </List>
-          </Collapse>
+            <Collapse in={nested1} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {NESTED_ITEMS_PERUSAHAAN.map((items, index) => {
+                  return (
+                    <>
+                      <Link
+                        to={items.link}
+                        key={index}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>{items.icon}</ListItemIcon>
+                          <ListItemText primary={items.text} />
+                        </ListItemButton>
+                      </Link>
+                    </>
+                  );
+                })}
+              </List>
+            </Collapse>
 
-          <ListItemButton onClick={() => handleClick(2)}>
-            <ListItemIcon>
-              <PersonIcon />
-            </ListItemIcon>
-            <ListItemText primary="Driver" style={{ marginLeft: -10 }} />
-            {nested2 ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
+            <ListItemButton onClick={() => handleClick(2)}>
+              <ListItemIcon>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText primary="Driver" style={{ marginLeft: -10 }} />
+              {nested2 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
 
-          <Collapse in={nested2} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {NESTED_DRIVERS.map((driver, index) => {
-                return (
-                  <>
-                    <Link
-                      to={driver.link}
-                      key={index}
-                      style={{ textDecoration: "none", color: "black" }}
-                    >
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{driver.icon}</ListItemIcon>
-                        <ListItemText primary={driver.text} />
-                      </ListItemButton>
-                    </Link>
-                  </>
-                );
-              })}
-            </List>
-          </Collapse>
+            <Collapse in={nested2} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {NESTED_DRIVERS.map((driver, index) => {
+                  return (
+                    <>
+                      <Link
+                        to={driver.link}
+                        key={index}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>{driver.icon}</ListItemIcon>
+                          <ListItemText primary={driver.text} />
+                        </ListItemButton>
+                      </Link>
+                    </>
+                  );
+                })}
+              </List>
+            </Collapse>
 
-          <ListItemButton onClick={() => handleClick(3)}>
-            <ListItemIcon>
-              <LocalShippingIcon />
-            </ListItemIcon>
-            <ListItemText primary="Truck" style={{ marginLeft: -10 }} />
-            {nested3 ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
+            <ListItemButton onClick={() => handleClick(3)}>
+              <ListItemIcon>
+                <LocalShippingIcon />
+              </ListItemIcon>
+              <ListItemText primary="Truck" style={{ marginLeft: -10 }} />
+              {nested3 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
 
-          <Collapse in={nested3} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {NESTED_ITEMS_TRUCK.map((items, index) => {
-                return (
-                  <>
-                    <Link
-                      to={items.link}
-                      key={index}
-                      style={{ textDecoration: "none", color: "black" }}
-                    >
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{items.icon}</ListItemIcon>
-                        <ListItemText primary={items.text} />
-                      </ListItemButton>
-                    </Link>
-                  </>
-                );
-              })}
-            </List>
-          </Collapse>
+            <Collapse in={nested3} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {NESTED_ITEMS_TRUCK.map((items, index) => {
+                  return (
+                    <>
+                      <Link
+                        to={items.link}
+                        key={index}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>{items.icon}</ListItemIcon>
+                          <ListItemText primary={items.text} />
+                        </ListItemButton>
+                      </Link>
+                    </>
+                  );
+                })}
+              </List>
+            </Collapse>
 
-          <ListItemButton onClick={() => handleClick(4)}>
-            <ListItemIcon>
-              <MiscellaneousServicesIcon />
-            </ListItemIcon>
-            <ListItemText primary="Service" style={{ marginLeft: -10 }} />
-            {nested3 ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
+            <ListItemButton onClick={() => handleClick(4)}>
+              <ListItemIcon>
+                <MiscellaneousServicesIcon />
+              </ListItemIcon>
+              <ListItemText primary="Maintenance" style={{ marginLeft: -10 }} />
+              {nested3 ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
 
-          <Collapse in={nested4} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              {NESTED_ITEMS_SERVICE.map((items, index) => {
-                return (
-                  <>
-                    <Link
-                      to={items.link}
-                      key={index}
-                      style={{ textDecoration: "none", color: "black" }}
-                    >
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{items.icon}</ListItemIcon>
-                        <ListItemText primary={items.text} />
-                      </ListItemButton>
-                    </Link>
-                  </>
-                );
-              })}
-            </List>
-          </Collapse>
+            <Collapse in={nested4} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {NESTED_ITEMS_SERVICE.map((items, index) => {
+                  return (
+                    <>
+                      <Link
+                        to={items.link}
+                        key={index}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        <ListItemButton sx={{ pl: 4 }}>
+                          <ListItemIcon>{items.icon}</ListItemIcon>
+                          <ListItemText primary={items.text} />
+                        </ListItemButton>
+                      </Link>
+                    </>
+                  );
+                })}
+              </List>
+            </Collapse>
+          </Box>
         </List>
       </Box>
     </>

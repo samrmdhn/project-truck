@@ -10,7 +10,7 @@ export default function Home({ children }) {
     <>
       <Box>
         <Grid container p={0}>
-          <Grid xs={2} md={2} lg={2}>
+          <Grid xs={2} md={2} lg={2} p={0}>
             <Sidebar />
           </Grid>
           <Grid xs={10} md={10} lg={10} p={0}>

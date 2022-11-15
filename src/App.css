@@ -24,6 +24,17 @@
   color: white;
 }
 
+table, th, td {
+  border: 0.8px solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+
+th,td {
+  padding: 10px;
+}
+
+
+
 .App-link {
   color: #61dafb;
 }

@@ -1,4 +1,5 @@
-import Box from "@mui/material/Box";import {
+import Box from "@mui/material/Box";
+import {
   Card,
   CardContent,
   Typography,
@@ -9,6 +10,9 @@ import Box from "@mui/material/Box";import {
 import Navbar from "../components/Navbar";
 import Home from "./Home";
 import CardPerusahaan from "../components/CardPerusahaan";
+import SearchIcon from "@mui/icons-material/Search";
+import TuneIcon from "@mui/icons-material/Tune";
+import IconButton from "@mui/material/IconButton";
 
 const DUMMY_LIST_PERUSAHAAN = [
   {
@@ -20,21 +24,21 @@ const DUMMY_LIST_PERUSAHAAN = [
   },
   {
     id: 2,
-    name: "PT GERHANA",
+    name: "HONDA",
     contract: "Contract/efhwf/webweb",
     phone: "08235235",
     status: false,
   },
   {
     id: 3,
-    name: "PT INDAH PERKASA",
+    name: "MITSUBISHI",
     contract: "Contract/ewkgl/2wvwe",
     phone: "08982948294",
     status: true,
   },
   {
     id: 4,
-    name: "PT ANGIN RIBUT",
+    name: "HONDA",
     contract: "Contract/wefwe/239829ch",
     phone: "087878909097",
     status: false,
@@ -48,22 +52,73 @@ export default function TruckList() {
         <Navbar link="Truck" name="List" />
         <Box backgroundColor={"rgb(244, 244, 244)"} minHeight={"90vh"}>
           <Box p={3}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6" fontWeight={"bolder"}>
+            <Box
+              sx={{
+                background:
+                  "linear-gradient(90deg, rgba(27,56,132,1) 0%, rgba(45,60,123,1) 20%, rgba(56,64,115,1) 40%, rgba(65,68,106,1) 60%, rgba(71,72,98,1) 80%, rgba(76,76,89,1) 100%)",
+                borderRadius: 3,
+                width: "100%",
+              }}
+            >
+              <Box sx={{ padding: 5 }}>
+                <Typography
+                  sx={{ color: "white", fontWeight: "bolder", mb: 2 }}
+                  variant="h5"
+                >
                   Cari Truck
                 </Typography>
-                <Grid container spacing={2} padding={0} marginTop={1} p={0}>
-                  <Grid item md={4}>
-                    <TextField size="small" fullWidth={true} />
-                  </Grid>
+                <Box sx={{ width: "60%", mb: 6 }}>
+                  <Typography variant="p" sx={{ color: "#97a2ad" }}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vivamus eget condimentum lectus. Praesent et molestie
+                    turpis. Curabitur ultrices risus vel magna varius, sed
+                    tristique magna pharetra.
+                  </Typography>
+                </Box>
 
-                  <Grid item md={2}>
-                    <Button variant="contained">Cari</Button>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </Card>
+                <Box display="flex" gap={1} alignItems="center">
+                  <Box>
+                    <TextField
+                      placeholder="Cari..."
+                      size="small"
+                      sx={{
+                        boxShadow: "unset",
+                        shadow: "unset",
+                        backgroundColor: "white",
+                        borderRadius: 2,
+                        width: "250px",
+                        ":focus": {
+                          borderRadius: 2,
+                          backgroundColor: "red",
+                        },
+                      }}
+                    />
+                  </Box>
+
+                  <Box>
+                    <Button
+                      sx={{
+                        boxShadow: "unset",
+                        borderRadius: 2,
+                        height: "40px",
+                        ":hover": {
+                          boxShadow: "unset",
+                        },
+                      }}
+                      variant="contained"
+                    >
+                      <SearchIcon />
+                    </Button>
+                  </Box>
+
+                  <Box>
+                    <IconButton aria-label="delete">
+                      <TuneIcon sx={{ color: "#97a2ad" }} />
+                    </IconButton>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
           </Box>
 
           <Box p={3} pt={0}>
