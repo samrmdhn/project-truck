@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import DriverPendaftaran from "./pages/DriverPendaftaran";
 import TruckList from "./pages/TruckList";
 import ServiceForm from "./pages/ServiceForm";
+import DriverProfile from "./pages/DriverProfile";
 
 export default function BasicGrid() {
   return (
@@ -28,9 +29,12 @@ export default function BasicGrid() {
           {/* DRIVER */}
           <Route path="driver/list" element={<DriverList />} />
           <Route path="driver/pendaftaran" element={<DriverPendaftaran />} />
+          <Route path="driver/profile/:id" element={<DriverProfile />} />
 
           {/* TRUCK */}
           <Route path="truck/list" element={<TruckList />} />
+
+          {/* Service */}
           <Route path="service/form" element={<ServiceForm />} />
         </Routes>
       </BrowserRouter>

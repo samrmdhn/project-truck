@@ -13,7 +13,14 @@ import { Link } from "react-router-dom";
 export default function CardPerusahaan({ name, contract, phone, status, id }) {
   return (
     <>
-      <Card sx={{ minWidth: 275 }}>
+      <Card
+        sx={{
+          minWidth: 275,
+          borderRadius: 3,
+          boxShadow: "unset",
+          border: "1px solid #E6EBF1",
+        }}
+      >
         <CardContent>
           <Typography
             sx={{ fontSize: 10, fontWeight: "bolder" }}
@@ -49,6 +56,7 @@ export default function CardPerusahaan({ name, contract, phone, status, id }) {
             </Box>
           </Box>
         </CardContent>
+
         <CardActions>
           <Box
             display={"flex"}
